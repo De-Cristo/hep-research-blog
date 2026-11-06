@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="$lang$">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="$description$">
+<meta name="generator" content="Quarto">
+<title>$title$</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('hep-blog-theme')||'light'}catch(e){}</script>
+$for(css)$<link rel="stylesheet" href="$css$">$endfor$
+$if(math)$$math$$endif$
+</head>
+<body>
+<header class="top"><a class="brand" href="./">HEP weekly reading</a><button id="theme" type="button" aria-label="Switch between light and dark theme">Light / dark</button></header>
+<div class="shell">
+<aside class="side" aria-label="In this edition"><details id="edition-menu" open><summary>Browse this edition</summary><nav>$toc$</nav></details></aside>
+<main id="main-content"><h1>$title$</h1><p class="edition">Week one · Reading notes and paper guides</p>
+$body$
+<footer class="foot">Published 6 November 2026 · <a href="https://github.com/De-Cristo/hep-research-blog">Source and revisions</a></footer>
+</main>
+</div>
+<script>
+const root=document.documentElement;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('hep-blog-theme',root.dataset.theme)}catch(e){}});
+const menu=document.getElementById('edition-menu');
+const narrow=window.matchMedia('(max-width:959px)');
+function sizeMenu(){menu.open=!narrow.matches;}sizeMenu();narrow.addEventListener('change',sizeMenu);
+const links=[...document.querySelectorAll('.side a')];
+links.forEach(a=>a.addEventListener('click',()=>{if(narrow.matches)menu.open=false;}));
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(items=>{for(const item of items){if(item.isIntersecting){for(const a of links)a.classList.toggle('active',a.hash==='#'+item.target.id);}}},{rootMargin:'-5% 0px -70% 0px'});document.querySelectorAll('main h2').forEach(x=>observer.observe(x));}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+project:
+  type: default
+  output-dir: docs
+  post-render:
+    - python3 scripts/finalize.py
+  render:
+    - index.qmd
+format:
+  html:
+    minimal: true
+    template: template.html
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+    number-sections: false
+    html-math-method: mathjax
+    self-contained-math: true
+    css: styles.css
+execute:
+  enabled: false
