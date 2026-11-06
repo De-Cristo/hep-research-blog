@@ -20,6 +20,6 @@ quarto render
 
 The explicit render list includes only `index.qmd`. Code execution is disabled. The self-contained HTML output is `docs/index.html`. Keep `docs/.nojekyll` when replacing the output.
 
-For GitHub Pages, select **Deploy from a branch**, **master**, and **/docs** in Settings → Pages. Render and review changes before committing the source and output together. There is no automatic publishing workflow.
+For GitHub Pages, select **GitHub Actions** in Settings → Pages. The repository workflow `.github/workflows/deploy-pages.yml` publishes the committed `docs/` output from `master` automatically. Render and review changes before committing the source and output together.
 
 The layout follows the [HEP web report guide](https://github.com/De-Cristo/hep-skills/tree/main/.agents/skills/hep-web-report): grouped sections, concise reading guides, responsive navigation, light and dark themes, and print styling.
