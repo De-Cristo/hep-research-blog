@@ -6,7 +6,9 @@ The first edition covers 4 November 2026. It contains thirteen paper summaries, 
 
 ## Read online
 
-https://de-cristo.github.io/hep-research-blog/
+[Read the first edition on GitHub](weekly/2026-11-04.md).
+
+The Quarto website is prepared for https://de-cristo.github.io/hep-research-blog/. GitHub Pages must be enabled using the settings below.
 
 ## Build
 
